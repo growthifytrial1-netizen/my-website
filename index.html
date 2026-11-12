@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Business Name</title>
+<meta name="description" content="Short description of your business for Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1b2d;--muted:#51607a;--paper:#f6f8fb;--white:#fff;--accent:#2f5bea;--accent-dark:#2146c4;--mint:#dff3e9;--line:#dde3ec}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.15rem;text-decoration:none}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--accent)}
+.hero{padding:88px 0 72px;background:var(--ink);color:var(--white)}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;margin:0 0 20px;max-width:16ch;letter-spacing:-.02em;font-weight:800}
+.hero p{font-size:1.15rem;max-width:52ch;margin:0 0 32px;color:#c9d3e4}
+.btn{display:inline-block;background:var(--accent);color:var(--white);padding:14px 26px;border-radius:8px;font-weight:700;text-decoration:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+.btn:hover{background:var(--accent-dark)}
+.hero .btn.alt{background:transparent;border:2px solid #4a5b78;margin-left:10px}
+section{padding:72px 0}
+h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:0 0 12px;letter-spacing:-.01em}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px}
+.card h3{margin:0 0 8px;font-size:1.15rem}
+.card p{margin:0;color:var(--muted)}
+.about{background:var(--mint)}
+.about p{max-width:62ch;margin:0 0 14px}
+form{display:grid;gap:14px;max-width:520px}
+label{font-weight:700;font-size:.95rem}
+input,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit;background:var(--white)}
+textarea{min-height:120px;resize:vertical}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+@media (max-width:520px){.hero .btn.alt{margin:12px 0 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Your Business Name</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Say what you do, in one clear sentence.</h1>
+      <p>Replace this line with who you help and what they get. Keep it short and specific.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn alt" href="#services">See services</a>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="lead">What you offer, in plain words.</p>
+      <div class="grid">
+        <div class="card"><h3>Service one</h3><p>One or two sentences about what the customer gets.</p></div>
+        <div class="card"><h3>Service two</h3><p>One or two sentences about what the customer gets.</p></div>
+        <div class="card"><h3>Service three</h3><p>One or two sentences about what the customer gets.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About us</h2>
+      <p>Tell visitors who you are, how long you have been running, and why customers trust you.</p>
+      <p>Add your city or service area and your working hours here.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Send a message and we will reply as soon as we can.</p>
+      <form id="f">
+        <div><label for="n">Your name</label><input id="n" name="name" required autocomplete="name"></div>
+        <div><label for="p">Phone or email</label><input id="p" name="contact" required></div>
+        <div><label for="m">Message</label><textarea id="m" name="message" required></textarea></div>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="y"></span> Your Business Name. Phone: 00000 00000 &middot; Email: you@example.com</div>
+</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+// Opens the visitor's email app. Change the address below to your own.
+document.getElementById('f').addEventListener('submit', function(e){
+  e.preventDefault();
+  var d = new FormData(e.target);
+  var body = 'Name: ' + d.get('name') + '\nContact: ' + d.get('contact') + '\n\n' + d.get('message');
+  location.href = 'mailto:you@example.com?subject=' + encodeURIComponent('Website enquiry') + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
